@@ -6,6 +6,8 @@ This directory contains files used to generate data for our analysis.
 > adaptation was needed to run inference with the older model, `alberta-v2`.
 > The relevant sections were commented out to be used twice.
 
+> Our code is imported as-is, there is no modification. Paths in code will be inconsistent.
+
 # Model Training
 
 Model training was done using Hugging Face's [`trl`](https://github.com/huggingface/trl) script.
@@ -16,7 +18,7 @@ No quantization was used.
 **Gemma 2 2B Instruct:**
 
 ```
-python sft.py 
+python sft.py \ 
 --model_name google/gemma-2-2b-it \
 --dataset_name shahafvl/fake_news \
 --dataset_text_field="text" \
@@ -44,7 +46,7 @@ The code for running the base model is the same, swapping the base model and `Go
 **Llama 3.1 8B Instruct:**
 
 ```
-python sft.py
+python sft.py \
 --model_name meta-llama/Meta-Llama-3.1-8B-Instruct \
 --dataset_name shahafvl/fake_news \
 --dataset_text_field="text" \
